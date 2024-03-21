@@ -3,7 +3,7 @@ import { Props } from './PageWrap.interface'
 
 const PageWrap:React.FC<Props> = ({component:Component}) => {
   return (
-    <div className='mt-6 shadow-md rounded-md p-4 bg-spaceBlue text-white'>
+    <div className='desktop:laptop:w-2/3 mt-6 shadow-xl rounded-md p-4 bg-spaceBlue text-white'>
         <Component/>
     </div>
   )

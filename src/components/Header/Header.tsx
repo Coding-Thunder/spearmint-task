@@ -21,20 +21,26 @@ const Header: React.FC = () => {
              }
         },
         {
-            label: "Go Back",
+            label: "Bar Chart",
             function: () => {
-                navigate(ROUTES.root)
+                navigate(ROUTES.bar)
              }
         },
+        {
+            label: "Scatter Chart",
+            function: () => {
+                navigate(ROUTES.scatter)
+             }
+        }
     ]
     return (
-        <div className='flex w-1/3 gap-2  bg-blue-500  rounded-md p-2'>
+        <div className='desktop:laptop:gap-2 desktop:laptop:justify-start flex desktop:laptop:w-fit  gap-2  bg-blue-500  rounded-md p-2 tablet:w-full tablet:justify-between tablet:gap-0 tablet:p-4'>
             {headerItems.map((item: HeaderItem,num:number) => (
-                <div onClick={() => {
+                <div key={`#${item.label}${num}`} onClick={() => {
                     item.function()
                     setActive(num)
                 }} 
-                className={` hover:bg-firebaseYellow p-4 font-semibold text-2xl text-white  cursor-pointer ${active === num && 'bg-firebaseYellow'} transition-all rounded-md`}>{item.label}</div>
+                className={` hover:bg-firebaseYellow desktop:laptop:p-4 p-2 font-semibold desktop:laptop:text-2xl tablet:text-xl text-white  cursor-pointer ${active === num && 'bg-firebaseYellow'} transition-all rounded-md`}>{item.label}</div>
             ))}
         </div>
     )
