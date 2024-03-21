@@ -1,5 +1,6 @@
 const ROUTES = {
     root:"/",
+    line:"/line",
     anonymous:"*"
 }
 
